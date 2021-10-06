@@ -72,7 +72,15 @@ Maintenant que vous pouvez enregistrer vos projet en base de données. Il va fal
 
 Depuis la page de votre portfolio affichant vos projets, créez le code PHP permettant de récupérer les données de la table `projects` et afficher celles-ci, grâce à une boucle `foreach`, à l'endroit où vous souhaitez les faire apparaître. 
 
-Pour vous aider, utilisez l'exercice PHP_2 et l'exercice 1 contenant une boucle affichant des données dans un tableau HTML ;).
+### Afficher les projet - Partie 2
+
+En réutilisant le code écrit ci-dessus, crées une page `index.php` dans le dossier `back` et afficher la totalité de vos projets dans un tableau HTML ayant cet ordre :
+
+| ID | Preview | Titre | Date d'ajout | Actions |
+|---|---|---|---|---|
+| 1 | Image | Mon projet | 01/01/2021 | Editer / Supprimer |
+
+Les mots `Editer`et `Supprimer` sont des liens sur lesquels nous reviendrons un peu plus tard.
 
 ## Création d'un utilisateur administrateur
 
