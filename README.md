@@ -55,7 +55,18 @@ Si le message « Connected successfully » apparaît, c'est que tout s'est bien 
 
 ## Gestion des projets
 
-Dans un dossier situé à la racine de votre portfolio, créez un dossier nommé `back`. Dans ce même dossier, créez un fichier nommé `addProject.php` contenant un formulaire avec les champs suivants : titre, description et un champ permettant d'uploader une image : `<input type="file">`
+Dans un dossier situé à la racine de votre portfolio, créez un dossier nommé `back`. Dans ce même dossier, créez un fichier nommé `addProject.php` contenant un formulaire avec les champs suivants : 
+* titre
+* description
+* un champ permettant d'uploader une image : `<input type="file">`
+
+**La date ne doit pas figuré sur le formulaire !**
+
+Le formulaire enverra les données vers une fichier nommé `insertProject.php`. Celui-ci vérifira si TOUTES les données ont bien été transmises. Si c'est le cas, vous effectuez un upload de l'image, correspondant au preview de votre projet, avant d'insérez les données en base de données : [Uploader une image en PHP](https://espritweb.fr/comment-uploader-une-image-en-php/)
+
+**N'oubliez pas d'insérez la date du jour au moment de l'insertion en BDD**
+
+
 
 ## Création d'un utilisateur administrateur
 
