@@ -82,6 +82,10 @@ En réutilisant le code écrit ci-dessus, crées une page `index.php` dans le do
 
 Les mots `Editer`et `Supprimer` sont des liens sur lesquels nous reviendrons un peu plus tard.
 
+## Supprimer un projet
+
+## Editer un projet
+
 ## Création d'un utilisateur administrateur
 
 Le back-office doit être fermé au public et accessible seulement aux personnes possédant un `username`et `mot de passe`. Pour cela, il va falloir enregistrer le premier utilisateur qui n'est d'autre que vous.
@@ -90,3 +94,4 @@ Créez une page `register.php` contenant un formulaire.
 
 Ce formulaire enverra les données vers une page nommée `addUser.php`. Dans cette page, faites en sorte d'insérer les données reçues dans la table `users` et n'oubliez surtout pas d'effectuer un hash sur le mot de passe en utilisant la fonction PHP `password_hash()`.
 
+## Sécuriser l'administration
