@@ -66,7 +66,13 @@ Le formulaire enverra les données vers une fichier nommé `insertProject.php`. 
 
 **N'oubliez pas d'insérez la date du jour au moment de l'insertion en BDD**
 
+## Afficher les projets
 
+Maintenant que vous pouvez enregistrer vos projet en base de données. Il va falloir les afficher sur la page d'accueil de votre portfolio.
+
+Depuis la page de votre portfolio affichant vos projets, créez le code PHP permettant de récupérer les données de la table `projects` et afficher celles-ci, grâce à une boucle `foreach`, à l'endroit où vous souhaitez les faire apparaître. 
+
+Pour vous aider, utilisez l'exercice PHP_2 et l'exercice 1 contenant une boucle affichant des données dans un tableau HTML ;).
 
 ## Création d'un utilisateur administrateur
 
