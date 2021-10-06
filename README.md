@@ -88,7 +88,7 @@ Les mots `Editer`et `Supprimer` sont des liens sur lesquels nous reviendrons un 
 
 ## Création d'un utilisateur administrateur
 
-Le back-office doit être fermé au public et accessible seulement aux personnes possédant un `username`et `mot de passe`. Pour cela, il va falloir enregistrer le premier utilisateur qui n'est d'autre que vous.
+Le back-office doit être fermé au public et accessible seulement aux personnes possédant un `username` et `mot de passe`. Pour cela, il va falloir enregistrer le premier utilisateur qui n'est d'autre que vous.
 
 Créez une page `register.php` contenant un formulaire.
 
