@@ -53,7 +53,7 @@ try {
 
 Si le message « Connected successfully » apparaît, c'est que tout s'est bien passé. On peut ensuite passer en commentaire l'instruction echo `"Connected successfully";` qui n'a qu'un caractère informatif pour le développeur.
 
-## Gestion des projets
+## Ajouter des projets
 
 Dans un dossier situé à la racine de votre portfolio, créez un dossier nommé `back`. Dans ce même dossier, créez un fichier nommé `addProject.php` contenant un formulaire avec les champs suivants : 
 * titre
