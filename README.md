@@ -53,8 +53,15 @@ try {
 
 Si le message « Connected successfully » apparaît, c'est que tout s'est bien passé. On peut ensuite passer en commentaire l'instruction echo `"Connected successfully";` qui n'a qu'un caractère informatif pour le développeur.
 
+## Gestion des projets
+
+Dans un dossier situé à la racine de votre portfolio, créez un dossier nommé `back`. Dans ce même dossier, créez un fichier nommé `addProject.php` contenant un formulaire avec les champs suivants : titre, description et un champ permettant d'uploader une image : `<input type="file">`
+
 ## Création d'un utilisateur administrateur
 
 Le back-office doit être fermé au public et accessible seulement aux personnes possédant un `username`et `mot de passe`. Pour cela, il va falloir enregistrer le premier utilisateur qui n'est d'autre que vous.
 
-Dans un dossier situé à la racine de votre portfolio, créez un dossier nommé `back`. Dans ce même dossier, créez une page `register.php` contenant un formulaire. Ce formulaire enverra les données vers une page nommée `addUser.php`. Dans cette page, faites en sorte d'insérer les données reçues dans la table `users` et n'oubliez surtout pas d'effectuer un hash sur le mot de passe en utilisant la fonction PHP `password_hash()`.
+Créez une page `register.php` contenant un formulaire.
+
+Ce formulaire enverra les données vers une page nommée `addUser.php`. Dans cette page, faites en sorte d'insérer les données reçues dans la table `users` et n'oubliez surtout pas d'effectuer un hash sur le mot de passe en utilisant la fonction PHP `password_hash()`.
+
