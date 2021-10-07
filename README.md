@@ -64,7 +64,9 @@ Dans un dossier situé à la racine de votre portfolio, créez un dossier nommé
 
 Le formulaire enverra les données vers une fichier nommé `insertProject.php`. Celui-ci vérifira si TOUTES les données ont bien été transmises. Si c'est le cas, vous effectuez un upload de l'image, correspondant au preview de votre projet, avant d'insérez les données en base de données : [Uploader une image en PHP](https://espritweb.fr/comment-uploader-une-image-en-php/)
 
-**N'oubliez pas d'insérez la date du jour au moment de l'insertion en BDD**
+Les images uploadés devront se trouver dans le dossier `assets/uploads/`.
+
+> N'oubliez pas la date du jour au moment de l'insertion en BDD
 
 ## Afficher les projets
 
@@ -74,17 +76,34 @@ Depuis la page de votre portfolio affichant vos projets, créez le code PHP perm
 
 ### Afficher les projet - Partie 2
 
-En réutilisant le code écrit ci-dessus, crées une page `index.php` dans le dossier `back` et afficher la totalité de vos projets dans un tableau HTML ayant cet ordre :
+En réutilisant le code écrit ci-dessus, créez une page `index.php` dans le dossier `back` et afficher la totalité de vos projets dans un tableau HTML ayant cet ordre :
 
 | ID | Preview | Titre | Date d'ajout | Actions |
 |---|---|---|---|---|
 | 1 | Image | Mon projet | 01/01/2021 | Editer / Supprimer |
 
-Les mots `Editer`et `Supprimer` sont des liens sur lesquels nous reviendrons un peu plus tard.
+Les mots `Editer` et `Supprimer` sont des liens sur lesquels nous reviendrons un peu plus tard.
 
 ## Supprimer un projet
 
+Le lien `Supprimer` dans le tableau des projets doit rediriger vers une page nommée `deleteProject.php`. Il est important de récupérer l'ID du projet en GET de façon à pouvoir le sélectionner en base de données. Par exemple : `deleteProject.php?id=12`.
+
+La page `deleteProjet.php` réceptionne l'ID du projet en question et vous devez effectuer un effacement dans celle-ci.
+
+Une fois l'effacement effectué, affichez un message de succès.
+
+> Pensez aussi à supprimer l'image associée à votre projet dans le dossiers `uploads`. Sans quoi vous vous retrouverez avec des images liées à aucun projet prenant de la place serveur pur rien.
+
 ## Editer un projet
+
+Le lien `Editer` dans le tableau des projets doit rediriger vers une page nommée `editProject.php`. Il est important de récupérer l'ID du projet en GET de façon à pouvoir le sélectionner en base de données. Par exemple : `editProject.php?id=12`. Le principe reste le même que pour la suppression.
+
+La page `editProject.php` doit contenir le même formulaire que l'ajout d'un projet. La différence étant que ce formulaire doit être pré-rempli des informations du projet à modifier. Grâce à l'ID reçu via l'URL, récupérez les infos en base de données et remplissez le formulaire avec. 
+
+À la validation de celui-ci, rediriger les informations vers une page nommée `saveEditProject.php` mettant à jour les données réceptionnées par le formulaire.
+
+> Lors d'une modification, tous les champs doivent être remplis, comme pour l'ajout. Par contre, rien n'oblige la personne à modifier l'image qui est associée.
+> Donc si l'utilisateur sélectionne une nouvelle image, vous devez supprimer l'ancienne et mettre à jour l'ensemble des données avec la nouvelle, sinon, vous ne faites rien.
 
 ## Création d'un utilisateur administrateur
 
@@ -93,5 +112,9 @@ Le back-office doit être fermé au public et accessible seulement aux personnes
 Créez une page `register.php` contenant un formulaire.
 
 Ce formulaire enverra les données vers une page nommée `addUser.php`. Dans cette page, faites en sorte d'insérer les données reçues dans la table `users` et n'oubliez surtout pas d'effectuer un hash sur le mot de passe en utilisant la fonction PHP `password_hash()`.
+
+> Vérifier que le formulaire soit correctement rempli avant d'effectuer une insertion.
+
+> :warning: Cette étape est important : afin d'éviter à des malins de trouver ce formulaire et de créer des comptes pour accéder à votre administration. Retirer ce fichier de votre projet par la suite.
 
 ## Sécuriser l'administration
