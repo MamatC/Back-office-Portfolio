@@ -4,6 +4,10 @@
 
 Dans le cadre du développement de votre Portfolio, le besoin porte sur la conception et le développement d'un back-office permettant d'administrer la publication de projets, puis d'une interface publique permettant de consulter les projets publiés.
 
+## Durée
+
+5 jours
+
 ## Conception de la base de données
 
 La première étape d'un développement back-end est la conception de la base de données. Sans celle-ci, vous n'avez pas la possibilité de pouvoir avancer dans le développement convenablement.
@@ -119,9 +123,9 @@ Ce formulaire enverra les données vers une page nommée `addUser.php`. Dans cet
 
 ## Sécuriser l'administration
 
-Pour terminer ce projet, vous devez maintenant sécuriser votre back-office. Seul l'administrateur qui se connecte doit pouvoir y accéder et personne d'autre !
+Pour terminer ce projet, vous devez maintenant sécuriser votre back-office.  
+**Seul l'administrateur qui se connecte doit pouvoir y accéder et personne d'autre !**
 
 À la racine du dossier `back`, créez un fichier `index.php` contenant un formulaire avec les champs : username et password.  
 Le formulaire redirige vers une fichier `connect.php`. Celui-ci doit être correctement rempli avant de vérifier les informations reçues.
-
 
