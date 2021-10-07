@@ -109,12 +109,19 @@ La page `editProject.php` doit contenir le même formulaire que l'ajout d'un pro
 
 Le back-office doit être fermé au public et accessible seulement aux personnes possédant un `username` et `mot de passe`. Pour cela, il va falloir enregistrer le premier utilisateur qui n'est d'autre que vous.
 
-Créez une page `register.php` contenant un formulaire.
+Créez une page `register.php` contenant un formulaire avec les champs : username et password.
 
 Ce formulaire enverra les données vers une page nommée `addUser.php`. Dans cette page, faites en sorte d'insérer les données reçues dans la table `users` et n'oubliez surtout pas d'effectuer un hash sur le mot de passe en utilisant la fonction PHP `password_hash()`.
 
 > Vérifier que le formulaire soit correctement rempli avant d'effectuer une insertion.
 
-> :warning: Cette étape est important : afin d'éviter à des malins de trouver ce formulaire et de créer des comptes pour accéder à votre administration. Retirer ce fichier de votre projet par la suite.
+> :warning: Afin d'éviter à des malins de trouver ce formulaire et de créer des comptes pour accéder à votre administration : **retirer ce fichier de votre projet par la suite.**
 
 ## Sécuriser l'administration
+
+Pour terminer ce projet, vous devez maintenant sécuriser votre back-office. Seul l'administrateur qui se connecte doit pouvoir y accéder et personne d'autre !
+
+À la racine du dossier `back`, créez un fichier `index.php` contenant un formulaire avec les champs : username et password.  
+Le formulaire redirige vers une fichier `connect.php`. Celui-ci doit être correctement rempli avant de vérifier les informations reçues.
+
+
