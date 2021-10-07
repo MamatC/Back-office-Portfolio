@@ -131,5 +131,6 @@ Le formulaire redirige vers une fichier `connect.php`. Celui-ci doit être corre
 
 Vérifier que le username et le mot de passe existe en base de données. Pour le mot de passe, utiliser la fonction PHP `password-verify()`.
 
-Rediriger l'utilisateur vers la page `projects.php` si tout est correct, sinon affichez un message d'erreur. Par sécurité, on ne précise jamais si c'est le `u
-sername` ou le `mot de passe` qui est invalide.
+Rediriger l'utilisateur vers la page `projects.php` si tout est correct en stockant ses données dans la superglobale `$_SESSION`, sinon affichez un message d'erreur. Par sécurité, on ne précise jamais si c'est le `username` ou le `mot de passe` qui est invalide.
+
+La superglobale `$_SESSION` vous sera très utile pour vérifier si un utilisateur à les droits nécessaires pour afficher les pages de l'administration. Sans cela, l'accès ne doit pas être possible et l'utilisateur sera automatiquement redigiré vers le formulaire de connexion.
