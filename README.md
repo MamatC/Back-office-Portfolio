@@ -80,7 +80,7 @@ Depuis la page de votre portfolio affichant vos projets, créez le code PHP perm
 
 ### Afficher les projet - Partie 2
 
-En réutilisant le code écrit ci-dessus, créez une page `index.php` dans le dossier `back` et afficher la totalité de vos projets dans un tableau HTML ayant cet ordre :
+En réutilisant le code écrit ci-dessus, créez une page `projects.php` dans le dossier `back` et afficher la totalité de vos projets dans un tableau HTML ayant cet ordre :
 
 | ID | Preview | Titre | Date d'ajout | Actions |
 |---|---|---|---|---|
@@ -129,3 +129,7 @@ Pour terminer ce projet, vous devez maintenant sécuriser votre back-office.
 À la racine du dossier `back`, créez un fichier `index.php` contenant un formulaire avec les champs : username et password.  
 Le formulaire redirige vers une fichier `connect.php`. Celui-ci doit être correctement rempli avant de vérifier les informations reçues.
 
+Vérifier que le username et le mot de passe existe en base de données. Pour le mot de passe, utiliser la fonction PHP `password-verify()`.
+
+Rediriger l'utilisateur vers la page `projects.php` si tout est correct, sinon affichez un message d'erreur. Par sécurité, on ne précise jamais si c'est le `u
+sername` ou le `mot de passe` qui est invalide.
