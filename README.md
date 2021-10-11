@@ -6,7 +6,7 @@ Dans le cadre du développement de votre Portfolio, le besoin porte sur la conce
 
 ## Durée
 
-5 jours
+Jusqu'au vendredi 22 octobre
 
 ## Conception de la base de données
 
@@ -129,8 +129,18 @@ Pour terminer ce projet, vous devez maintenant sécuriser votre back-office.
 À la racine du dossier `back`, créez un fichier `index.php` contenant un formulaire avec les champs : username et password.  
 Le formulaire redirige vers une fichier `connect.php`. Celui-ci doit être correctement rempli avant de vérifier les informations reçues.
 
-Vérifier que le username et le mot de passe existe en base de données. Pour le mot de passe, utiliser la fonction PHP `password-verify()`.
+Vérifier que le username et le mot de passe existe en base de données. Pour le mot de passe, utiliser la fonction PHP `password_verify()`.
 
-Rediriger l'utilisateur vers la page `projects.php` si tout est correct en stockant ses données dans la superglobale `$_SESSION`, sinon affichez un message d'erreur. Par sécurité, on ne précise jamais si c'est le `username` ou le `mot de passe` qui est invalide.
+Rediriger l'utilisateur vers la page `projects.php` si tout est correct et stockez ses données dans la superglobale `$_SESSION`, sinon affichez un message d'erreur. Par sécurité, on ne précise jamais si c'est le `username` ou le `mot de passe` qui est invalide.
+
+> Ne stockez pas le mot de passe dans la $_SESSION par sécurité. Seul l'adresse e-mail sera suffisante. La session étant créée seulement sur le navigateur de celui qui se connecte.
 
 La superglobale `$_SESSION` vous sera très utile pour vérifier si un utilisateur à les droits nécessaires pour afficher les pages de l'administration. Sans cela, l'accès ne doit pas être possible et l'utilisateur sera automatiquement redigiré vers le formulaire de connexion.
+
+Dans les pages ne pouvant être accessible que par l'administrateur, ajouter ce code au plus haut du fichier :
+
+```php
+if (!isset($_SESSION['email'])) {
+   header('Location: login.php'); // Permet de rediriger un visiteur vers une autre page
+}
+```
