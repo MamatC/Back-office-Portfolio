@@ -140,7 +140,11 @@ La superglobale `$_SESSION` vous sera très utile pour vérifier si un utilisate
 Dans les pages ne pouvant être accessible que par l'administrateur, ajouter ce code au plus haut du fichier :
 
 ```php
+session_start();
 if (!isset($_SESSION['email'])) {
-   header('Location: login.php'); // Permet de rediriger un visiteur vers une autre page
+    // Permet de rediriger un visiteur vers le formulaire de connexion si la clé "email" n'existe pas dans la session
+    header('Location: index.php');
 }
 ```
+
+Dans le code ci-dessus, vous remarquerez un `session_start()`. Celui-ci doit être présent au plus haut de chaque code PHP utilisant les $_SESSION, sans cela, elles ne fonctionneront pas.
